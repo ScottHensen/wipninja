@@ -1,0 +1,54 @@
+Slap together a basic dashboard, navbar, signin/out, firebase.auth
+  5/1 19:00
+    $ vue init webpack-simple wipninja
+    $ cd wipninja
+    $ npm install
+    $ npm install vue-router vuex firebase –save	//dash dash
+    $ git init
+    $ git status
+    $ npm run dev
+  5/1 19:30 – welcome to your vue.js app is up
+    Hand-code the signon/signoff/navbar/etc.      // could just copy/paste from toolbox
+  5/1 19:50 – add firebase auth for wipninja
+  5/1 20:10 – working; committed
+
+Next, add board component, category component, task component; store these objects; then, assemble them.  Take 10 minutes to PLAN before coding…
+  5/2 18:30
+    Add Board.vue rough-in; hook it to navbar.
+  5/2 19:00 - 19:30
+    Read up on firebase database.  Looks pretty damn slick; going to plug it in.
+  5/4 19:30 - 21:30
+    Add Task and AddTask components.  Storing tasks to firebase db now.
+    Display tasks as separate cards.
+
+Next, add task timestamp, then history
+  5/5 18:30 - add firebase timestamp
+  5/5 18:40 - 19:30 read the firebase db docs
+  5/6 13:00 - oof.  hitting a wall on how to capture updated input boxes in a component.  simple w/ just jqery.
+              capturing the key now; started to build a version/history for each element in the document.
+              ... going to reverse that course and use a block-chain for each task. inserts only.  the tasks are small.
+              ... made the block-chain work.  second/third guessing it now.  maybe history is smarter.
+                  like this...
+                  task : {
+                    description: [
+                      { v:'1', ts:234234232, value: 'foo' },
+                      { v:'2', ts:234234444, value: 'bar' }
+                    ],
+                    status: [
+                      { v:'1', ts:234234232, value: 'backlog' },
+                      { v:'2', ts:234234444, value: 'wip'     },
+                      { v:'3', ts:234234567, value: 'complete'}
+                    ]
+                  }
+  5/8 19:30 - figure out how to persist on 1 edit per card instead of 1 edit per input per card, then plug in the versioning as described above
+            - root cause is because I'm not updating this.key and this.task when a task is updated.
+            - bad design though; I'm updating store when the render updated() event fires.  this can be dangerous/loopy.
+              for now, go to an easier plan-b... add a 'save' button, so you can just do standard onclick, save.
+              double back once prototype is up to allow for save without a save button, cuz that's dumb.  i have that working in plain ol js.
+              ... that took one minute.  Jeezus! Stop getting bogged down in bullshit - it's a prototype.
+      21:00 - now I'm ready to version the json.  but my brain is tired.  calling it a night.  ugh.
+
+  5/9 19:00 - push to github, clean up a bit, then do the history
+            - git commit -a -m "Add board, tasks, vuex store, firebase db"
+            - git remote add origin https://github.com/ScottHensen/wipninja.git
+            - git push -u origin master

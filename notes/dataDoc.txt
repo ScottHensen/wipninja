@@ -1,0 +1,57 @@
+task : {
+  description: [
+    { v:'1', ts:234234232, value: 'foo' },
+    { v:'2', ts:234234444, value: 'bar' }
+  ],
+  status: [
+    { v:'1', ts:234234232, value: 'backlog' },
+    { v:'2', ts:234234444, value: 'wip'     },
+    { v:'3', ts:234234567, value: 'complete'}
+  ]
+}
+
+
+"boards": {
+  "board123": {
+    "name": "Foo Board",
+    "statCats": [
+      "Backlog", "Waiting", "WIP", "Testing", "Completed"
+    ]
+  },
+  "board456": { ... }
+}
+
+"members": {
+  "board123": {
+    "luke@vader.com": true,
+    "leia@tattoine.com": true
+  },
+  "board456": { ... }
+}
+
+"users" : {
+  "luke@vader.com": {
+    "name": "Jedi69",
+    "groups": {
+      "board123": true,
+      "fooboard": true
+    }
+  },
+  ...
+}
+
+  task: [{
+    name: '',
+    desc: '',
+    targetDate: '',
+    pID: '',
+    status: '',
+    history: [{
+      timestamp: '',
+      name: '',
+      desc: '',
+      pID: '',
+      status: ''
+    }]
+  }]
+}
