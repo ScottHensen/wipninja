@@ -1,16 +1,64 @@
+// data schema for the wip.ninja kanban board
+//
+//   based on Henrik Kniberg's really nice example
+//
+
+board : {
+  name,
+  stages: { }
+}
+
+stage : {
+  name,                   // next, analysis, development, acceptance, prod
+  limit,                  // 2,    3,        3,           2,          null
+  doneCriteria: [],       // ["foo", "bar", "qux"]
+  stories: []
+}
+
+story : {
+  goal,
+  hero,
+  status: "doing"|"done"  //"doing" as soon as its dropped in new stage; track history w/ ts
+  tasks: {},
+  addedToBoardTS,
+  deadline,             //nullable
+  priority,             //boolean
+  panic                 //boolean
+}
+
 task : {
-  description: [
+  goal,
+  hero,
+  status:
+}
+
+status: {
+  v,      //version
+  ts,     //timestamp
+  value   //"doing" | "done" | "blocked" | null (for stage.status only)
+}
+
+...handle all history like that.  example...
+
+task : {
+  goal: [
     { v:'1', ts:234234232, value: 'foo' },
     { v:'2', ts:234234444, value: 'bar' }
+  ],
+  hero: [
+    { v:'1', ts:234234232, value: 'jerry' }
   ],
   status: [
     { v:'1', ts:234234232, value: 'backlog' },
     { v:'2', ts:234234444, value: 'wip'     },
     { v:'3', ts:234234567, value: 'complete'}
-  ]
+  ],
 }
 
 
+
+
+---- original scribbles -------------------------
 "boards": {
   "board123": {
     "name": "Foo Board",
