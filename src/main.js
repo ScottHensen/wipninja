@@ -4,18 +4,20 @@ import { firebaseApp } from './firebaseApp'
 
 Vue.use(VueRouter)
 
-import App from './components/App.vue'
+import App       from './components/App.vue'
 import store     from './store'
 import Dashboard from './components/Dashboard.vue'
 import Signin    from './components/Signin.vue'
 import Signup    from './components/Signup.vue'
+import Board     from './components/Board.vue'
 
 const router = new VueRouter({
   mode: 'history',
   routes: [
     { path: '/dashboard',     component: Dashboard },
     { path: '/signin',        component: Signin    },
-    { path: '/signup',        component: Signup    }
+    { path: '/signup',        component: Signup    },
+    { path: '/board/:id',     component: Board     }
   ]
 })
 

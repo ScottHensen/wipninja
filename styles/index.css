@@ -2,8 +2,11 @@ html, body {
   height: 100%;
   background-color: #181b1c;
   color: #30bfb8;
-  /*background-color: #303030;
-  color: #0ce3ac;*/
+}
+
+input {
+  background-color: #303030;
+  color: #30bfb8;
 }
 
 #app {
@@ -21,6 +24,17 @@ html, body {
   margin-top: 60px;
   padding-left: 10%;
   padding-right: 10%;
+}
+
+.form {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.task-card {
+  border: 2px solid #2c3e50;
+  margin-top: 10px;
+  border-radius: 4px;
 }
 
 /*.signout-btn {

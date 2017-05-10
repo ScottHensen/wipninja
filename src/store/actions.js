@@ -7,3 +7,7 @@ export const signIn = ({commit}, user_payload) => {
 export const signOut = ({commit}) => {
   commit(types.SIGN_OUT)
 }
+
+export const setTasks = ({commit}, tasks_payload) => {
+  commit(types.SET_TASKS, tasks_payload)
+}

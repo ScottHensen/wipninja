@@ -11,3 +11,5 @@ import firebase from 'firebase'
   };
 
 export const firebaseApp = firebase.initializeApp(config)
+export const tasksRef    = firebase.database().ref().child('tasks')
+export const firebaseTS  = firebase.database.ServerValue.TIMESTAMP

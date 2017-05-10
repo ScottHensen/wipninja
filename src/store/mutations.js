@@ -6,5 +6,8 @@ export const mutations = {
   },
   [types.SIGN_OUT] (state) {
     state.user = {}
+  },
+  [types.SET_TASKS] (state, tasks_payload) {
+    state.tasks = tasks_payload
   }
 }
