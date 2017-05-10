@@ -52,3 +52,4 @@ Next, add task timestamp, then history
             - git commit -a -m "Add board, tasks, vuex store, firebase db"
             - git remote add origin https://github.com/ScottHensen/wipninja.git
             - git push -u origin master
+      21:30 - planned the data structures a bit. calling it night.
